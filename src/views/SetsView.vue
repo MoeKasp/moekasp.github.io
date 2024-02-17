@@ -34,10 +34,10 @@ onMounted(() => {
     <h1 class="text-center">Sets done: {{ setsDone }}</h1>
     <div class="row">
       <div class="col-6 text-center my-2">
-        <button class="btn btn-success w-100" @click="addSet"> + </button>
+        <button class="btn btn-warning w-100" @click="removeSet">-</button>
       </div>
       <div class="col-6 text-center my-2">
-        <button class="btn btn-primary w-100" @click="removeSet"> - </button>
+        <button class="btn btn-success w-100" @click="addSet">+</button>
       </div>
       <div class="col-12 text-center">
         <button class="btn btn-danger w-100" @click="resetSets">reset</button>
