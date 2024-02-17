@@ -6,9 +6,10 @@ const chest = ref(false)
 const back = ref(false)
 const shoulders = ref(false)
 const arms = ref(false)
+const core = ref(false)
 
 const done = computed(() => {
-  return legs.value && chest.value && back.value && shoulders.value && arms.value
+  return legs.value && chest.value && back.value && shoulders.value && arms.value && core.value
 })
 
 const toggleLegs = () => {
@@ -34,6 +35,11 @@ const toggleShoulders = () => {
 const toggleArms = () => {
   arms.value = !arms.value
   setValInLocalStorage('arms', arms.value)
+}
+
+const toggleCore = () => {
+  core.value = !core.value
+  setValInLocalStorage('core', core.value)
 }
 
 const setValInLocalStorage = (key: string, value: boolean) => {
@@ -75,6 +81,10 @@ onMounted(() => {
   }
   if (localStorage.getItem('arms')) {
     arms.value = isDoneToday(parseInt(localStorage.getItem('arms')!))
+  }
+
+  if (localStorage.getItem('core')) {
+    core.value = isDoneToday(parseInt(localStorage.getItem('core')!))
   }
 })
 </script>
@@ -167,6 +177,23 @@ onMounted(() => {
             @change="toggleArms"
           />
           <label class="form-check-label" for="arms">Arms</label>
+        </div>
+        <div class="col-3"></div>
+      </div>
+
+      <div class="row">
+        <div class="col-3"></div>
+        <div class="col-6 form-check form-switch">
+          <input
+            class="form-check-input"
+            type="checkbox"
+            role="switch"
+            id="core"
+            :value="core"
+            :checked="core"
+            @change="toggleCore"
+          />
+          <label class="form-check-label" for="core">Core</label>
         </div>
         <div class="col-3"></div>
       </div>
