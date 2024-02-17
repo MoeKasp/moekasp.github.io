@@ -1,0 +1,1 @@
+import{_ as e,o as t,c as s,a as c}from"./index-Dja9HlKk.js";const o={},n={class:"container"},a=c("h1",{class:"text-center"},"All of them",-1),_=[a];function r(i,d){return t(),s("div",n,_)}const f=e(o,[["render",r]]);export{f as default};
